@@ -107,8 +107,18 @@ header img{
 .menu h2{
     font-weight: 300;
     margin-bottom:12px;
-    border-bottom: 3px solid #99E2D0;/* a voir avec Larry */
-  
+    position: relative;
+}
+
+.menu h2::after {
+ content: ".";
+ color:transparent;
+ height :100px;
+ width:40px;
+ border-bottom: 3px solid #99E2D0;
+ position: absolute;
+ left:0px;
+ bottom : -2px;
 }
 
 h3{
