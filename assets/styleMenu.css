@@ -177,6 +177,7 @@ header img{
     opacity:1;
     transition:transform 2s ease-in-out;
     transform:translateX(-20em);
+    
 }
 
 /** fin animation plat choisi : cloche qui glisse **/
