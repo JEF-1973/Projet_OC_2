@@ -84,7 +84,11 @@
     width:100%;
     padding:15px;
   }
- 
+  .bouton-explorer :hover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+    filter:brightness(1.1);/*eclaircit la couleur du bouton*/
+  }
+
   /* *************Fonctionnement ************/
   .fonctionnement{
     padding:30px 15px;
@@ -97,6 +101,13 @@
     flex-direction:column;
     gap:10px;
   }
+
+  .fonctionnement-items :hover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+    filter:brightness(1.01);/*eclaircit la couleur du bouton*/
+  }
+
+
   .fonctionnement li {
     width:100%;
     height:60px;
@@ -180,26 +191,38 @@
   font-size: 24px;
 }
 
-.restau-items-details .empty-heart{
-  /* font-weight: 100; ca ne fonctionne pas pour avoir un trait plus fin */
-  transform: scale(1);
-  transition:all 1000ms;
-}
+ /* ici commence les animations */
 
-.restau-items-details .empty-heart:hover {
-  display :none;
-}
-   
-      
-      
-
-.restau-items-details .full-heart {
+ .restau-items-details .full-heart {
   display:none;
-  color:#9356DC;
-  /* color:linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%); */
+  color:transparent;
+  background:linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  /* background:-moz-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  background:-o-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%); */
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -o-background-clip: text;
+  animation: fully-heart 1s ease-in-out forwards;
  }
 
- 
+.restau-items-details-icons:hover .full-heart{
+  display: block;
+}
+
+.restau-items-details-icons:hover .empty-heart{
+  display: none;
+}
+
+@keyframes fully-heart {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+
 
 
 /**************Footer **************/
@@ -236,4 +259,62 @@
     margin-bottom:7px;
   }
 
+/***********************************************************************************
+  ***************************** Partie Responsive ************************************
+  ******************************Media Querie Desktop**********************************/
+  
+  @media screen and (min-width:700px){
 
+
+  /***************Fonctionnement***************/
+  
+  .fonctionnement{
+     padding : 30px 100px;
+
+  }
+  .fonctionnement-items{
+    display:flex;
+    flex-direction:row;
+    gap:30px;
+    width:100%;
+  }
+  
+  /***************Restaurants***************/
+  .restaurants{
+
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding : 30px 100px;
+  }
+
+  .restaurants h1{
+    width:100%;
+  }
+  
+  .restau-items{
+    width:46%;
+  }
+
+  /**************Footer **************/
+footer{
+  height:120px;
+  display: flex;
+  flex-direction:row-reverse;
+  align-items: end;
+  gap :40px;
+}
+
+footer h2{
+  
+  margin-bottom: 0px;
+  
+}
+  footer ul {
+
+  display :flex;
+  flex-direction: row;
+  gap :10px;
+}
+
+ }

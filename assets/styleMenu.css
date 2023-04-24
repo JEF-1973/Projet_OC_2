@@ -56,7 +56,6 @@ header img{
     bottom:40px;
     width: 100%;
     padding: 10px;
-   
 }
 
 .menu-titre{
@@ -75,7 +74,36 @@ header img{
     text-align: center;
     font-size:25px;
 }
+/**********animation Fill menu heart**********/
 
+.full-heart {
+    display:none;
+    color:transparent;
+    background:linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -o-background-clip: text;
+    animation: fully-heart 1s ease-in-out forwards;
+}
+  
+.menu-titre-icons:hover .full-heart{
+    display: block;
+}
+  
+.menu-titre-icons:hover .empty-heart{
+    display: none;
+}
+  
+  @keyframes fully-heart {
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+
+  /*********Menu**********/
 .menu-items{
     display:flex;
     flex-direction: column;
@@ -86,8 +114,29 @@ header img{
     display:flex;
     flex-direction: column;
     gap:10px;
+    opacity:0;
+    animation: menu-display 500ms ease-in-out forwards; /**animation affichage menu **/
 }
+/**animation affichage menu en ajoutant 1 delai pour affichage fluide et progressif**/
+    
+.plat-items {
+    animation-delay:500ms;
+}
+.dessert-items {      
+    animation-delay:1000ms;
+}
+@keyframes menu-display {
+  
+  0%{
+    opacity:0; 
+  }
 
+  100%{
+    opacity:1;
+  }
+}
+/**fin animation affichage menu **/
+    
 .entree-items-details, .plat-items-details, .dessert-items-details{
     background-color: #FFFF;
     height: 70px;
@@ -102,7 +151,37 @@ header img{
     Top:35px;
     right :10px;
     font-weight: bold;
+    
+    
 }
+/** animation plat choisi : cloche qui glisse **/
+.plat-items-details-choisi {
+    position:absolute;
+    right:15px;
+    top:10px;
+    z-index: 1;
+    opacity:0;
+}
+
+.entree-items-details:hover .plat-items-details-choisi{
+    opacity:1;
+    transition:transform 2s ease-in-out;
+    transform:translateX(-20em);
+}
+.plat-items-details:hover .plat-items-details-choisi{
+    opacity:1;
+    transition:transform 2s ease-in-out;
+    transform:translateX(-20em);
+}
+.dessert-items-details:hover .plat-items-details-choisi{
+    opacity:1;
+    transition:transform 2s ease-in-out;
+    transform:translateX(-20em);
+}
+
+/** fin animation plat choisi : cloche qui glisse **/
+
+
 
 .menu h2{
     font-weight: 300;
@@ -110,6 +189,7 @@ header img{
     position: relative;
 }
 
+/*** ajoute du surlignage vert ***/
 .menu h2::after {
  content: ".";
  color:transparent;
@@ -141,6 +221,13 @@ h3{
     height :50px;
     padding:15px;
 }   
+
+.bouton-commander :hover{
+    
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+    filter:brightness(1.1);/*eclaircit la couleur du bouton*/
+
+}
 
 /**************Footer **************/
 
@@ -176,3 +263,38 @@ footer a{
 footer li{
     margin-bottom:7px;
 }
+
+/***********************************************************************************
+  ***************************** Partie Responsive ************************************
+  ******************************Media Querie Desktop**********************************/
+  
+  @media screen and (min-width:768px){
+
+/**************section menu **************/
+.menu{
+    margin:auto;
+    width: 70%;
+}
+
+/**************Footer **************/
+footer{
+    height:120px;
+    display: flex;
+    flex-direction:row-reverse;
+    align-items: end;
+    gap :40px;
+}
+
+footer h2{
+    margin-bottom: 0px;
+}
+
+footer ul {
+    display :flex;
+    flex-direction: row;
+    gap :10px;
+    }
+
+}
+
+ 
