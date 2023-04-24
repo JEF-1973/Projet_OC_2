@@ -139,48 +139,74 @@ header img{
     
 .entree-items-details, .plat-items-details, .dessert-items-details{
     background-color: #FFFF;
-    height: 70px;
-    padding:10px; 
+    height: 70px; 
     box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
-    position :relative
+    display:flex;
+    position :relative;
+    width: 100%;
 }
-
-.entree-items-details span, .plat-items-details span ,.dessert-items-details span{
-    position : absolute;
-    Top:35px;
-    right :10px;
-    font-weight: bold;
-    
-    
-}
-/** animation plat choisi : cloche qui glisse **/
+/***************************************************/
+/** animation plat choisi : check box qui glisse **/
 .plat-items-details-choisi {
-    position:absolute;
-    right:15px;
-    top:10px;
-    z-index: 1;
-    opacity:0;
+    border-radius: 0 15px 15px 0;
+    width:0%;
+    background-color: #99E2D0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    transition:all 0.2s ease-in-out;/*en mettant la transition ici avec la meme duree et 
+    ligne 175 |*-* ??| on obtient l'elargissement de droite vers la gauche*/
+}
+.plat-items-details-choisi i{
+    font-size: 0px;
+    color:transparent;
+    background:white;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -o-background-clip: text;
 }
 
+.entree-items-details-texte, .plat-items-details-texte, .dessert-items-details-texte {
+    width: 100%;
+    padding:10px;
+    display: flex;
+    justify-content: space-between;
+    align-items:end;
+    transition:all 0.2s ease-in-out; /*??..|*-*|..?? */
+}
+
+.entree-items-details:hover .plat-items-details-choisi i{
+    font-size: 20px;
+}
 .entree-items-details:hover .plat-items-details-choisi{
-    opacity:1;
-    transition:transform 2s ease-in-out;
-    transform:translateX(-20em);
+    width:10%;
+}
+.entree-items-details:hover .entree-items-details-texte{
+    width:90%;
+}
+
+.plat-items-details:hover .plat-items-details-texte{
+    width:90%;
 }
 .plat-items-details:hover .plat-items-details-choisi{
-    opacity:1;
-    transition:transform 2s ease-in-out;
-    transform:translateX(-20em);
+    width:10%;
 }
-.dessert-items-details:hover .plat-items-details-choisi{
-    opacity:1;
-    transition:transform 2s ease-in-out;
-    transform:translateX(-20em);
-    
+.plat-items-details:hover .plat-items-details-choisi i{
+    font-size: 20px;
 }
 
-/** fin animation plat choisi : cloche qui glisse **/
+.dessert-items-details:hover .dessert-items-details-texte{
+    width:90%;
+}
+.dessert-items-details:hover .plat-items-details-choisi{
+    width:10%;
+}
+.dessert-items-details:hover .plat-items-details-choisi i{
+    font-size: 20px;
+}
+
+/** fin animation pla choisi **/
 
 
 
@@ -224,10 +250,8 @@ h3{
 }   
 
 .bouton-commander :hover{
-    
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
     filter:brightness(1.1);/*eclaircit la couleur du bouton*/
-
 }
 
 /**************Footer **************/
