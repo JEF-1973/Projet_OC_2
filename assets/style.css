@@ -8,6 +8,7 @@
   }
   
   body {
+    position: relative;
     background-color: white;
     margin: auto;
     max-width: 320 px;
