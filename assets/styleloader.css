@@ -4,28 +4,48 @@
     left: 50%;
     width: 100%;
     height: 100%;
-    margin: 50px 100px;
     z-index: 10;
     transform: translate(-50%,-50%);
     margin: 0;
-    background: #fff;
-    animation: 5s linear forwards disappear;
+    background: rgba(255, 255, 255, 0.95);
+    animation: 3.5s linear forwards disappear;
 }  
 
 .myloader-box{
     position: absolute;
     top: 50%;
     left: 50%;
+    width:30em;
+    height: 30em;
     transform: translate(-50%,-50%);
+    /* display: flex;
+    justify-content: center;
+    align-items: center;*/
+    animation :0.1s linear 3s forwards disappear_myloader-box;
+}
+
+/* bricolage pour faire disparaitre la div myloader-box */
+@keyframes disappear_myloader-box{
+    0%{opacity:0}
+    99%{
+        width:100%;
+    }
+	100%{
+        width: 0%;
+	}
+
+
+
 }
 
 .big-wheel{
-    position:relative;
-    width:30em;
-    height: 30em;
+    position:absolute;
+    width: 30em;
+    height:30em;
     background-color:rgba(153, 226, 208,0.7);
     border-radius:50%;
     animation: 3s linear forwards anim;
+   
 }
 
 
@@ -35,7 +55,7 @@
     width: 20em;
     height:3em;
     Left:5em;
-    animation: 3s linear forwards appear;
+    animation: 3s linear forwards logo-disappear;
 }
 
 .logo img{
@@ -45,6 +65,7 @@
 }
 
 .perle{
+    position : relative;
     width:3em;
     height: 3em;
     border-radius:50%;
@@ -55,8 +76,8 @@
 .perle1{
     background-color: rgba(86, 200, 220,1);
     position:absolute;
-    top: 0.1em;
-    Left:14em;
+    top: 0.1rem;
+    Left:14rem;
 }
 
 .perle11{
@@ -138,51 +159,77 @@
     
 
 @keyframes anim{
-	0%{}
-	100%{
-		transform: rotate(-360deg);
-        opacity: 0;
-	}
-}
-
-@keyframes disappear{
-	0%{}
-	100%{
-        opacity: 0;
-        display: none;
-        width: 0%;
-	}
-}
-
-@keyframes appear{
 	0%{
-        scale: 0.05;
-        opacity:0.05;
+        scale: 1;
+        opacity:1;
     }
     10%{
-        scale: 0.05;
-        opacity:0.1;
+        scale: 0.9;
+        opacity:0.9;
     }
-    10%{
-        scale: 0.1;
-        opacity:0.15;
-    }
-
     25%{
-        scale:0.25;
-        opacity:0.3;
+        scale:0.75;
+        opacity:0.75;
     }
     50%{
         scale:0.5;
         opacity:0.6;
     }
     75%{
+        scale: 0.25;
+        opacity:0.25;
+    }
+	
+	100%{
+		transform: rotate(-360deg);
+        scale: 0.1;
+        opacity: 0;
+        display:none;
+	}
+}
+
+@keyframes disappear{
+	0%{}
+
+
+    90%{
+        opacity:0.9;
+    }
+    
+	100%{
+        opacity: 0;
+        width: 0%;
+        height:0%;
+        
+	}
+}
+
+@keyframes logo-disappear{
+	0%{
+        scale:1;
+		opacity:1;
+    }
+        
+    10%{
+        scale: 0.9;
+        opacity:0.9;
+    }
+    25%{
         scale:0.75;
-        opacity:1;
+        opacity:0.75;
+    }
+    50%{
+        scale:0.5;
+        opacity:0.6;
+    }
+    75%{
+        scale: 0.25;
+        opacity:0.25
     }
 
 	100%{
-        scale:1;
-		opacity:0;
+        scale: 0;
+        opacity:0;
+       
 	}
 }
