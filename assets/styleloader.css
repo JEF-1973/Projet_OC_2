@@ -1,6 +1,6 @@
 .myloader{
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
     width: 100%;
     height: 100%;
@@ -21,7 +21,7 @@
     /* display: flex;
     justify-content: center;
     align-items: center;*/
-    animation :0.1s linear 3s forwards disappear_myloader-box;
+    animation :0.1s linear 3.1s forwards disappear_myloader-box;
 }
 
 /* bricolage pour faire disparaitre la div myloader-box */
@@ -55,7 +55,7 @@
     width: 20em;
     height:3em;
     Left:5em;
-    animation: 3s linear forwards logo-disappear;
+    animation: 3s linear forwards logo-anim;
 }
 
 .logo img{
@@ -204,7 +204,7 @@
 	}
 }
 
-@keyframes logo-disappear{
+@keyframes logo-anim{
 	0%{
         scale:1;
 		opacity:1;
@@ -213,6 +213,7 @@
     10%{
         scale: 0.9;
         opacity:0.9;
+        
     }
     25%{
         scale:0.75;
@@ -221,6 +222,7 @@
     50%{
         scale:0.5;
         opacity:0.6;
+        transform: rotate(360deg);
     }
     75%{
         scale: 0.25;
@@ -230,6 +232,19 @@
 	100%{
         scale: 0;
         opacity:0;
+        transform: rotate(360deg);
        
 	}
+}
+
+
+/***********************************************************************************
+  ***************************** Partie Responsive ************************************
+  ******************************Media Querie Desktop**********************************/
+
+  
+@media screen and (min-width:768px){
+    .myloader{
+        top: 50%;
+    }  
 }
