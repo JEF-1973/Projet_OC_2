@@ -52,7 +52,6 @@ header img{
     flex-direction: column;
     gap:10px;
     position:relative;
-    bottom:40px;
     width: 100%;
     padding: 10px;
 }
@@ -215,7 +214,7 @@ header img{
     position: relative;
 }
 
-/*** ajoute du surlignage vert ***/
+/*** ajoute du surlignage vert via la pseudo classe "::after"  ***/
 .menu h2::after {
  content: ".";
  color:transparent;
