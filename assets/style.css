@@ -8,9 +8,8 @@
 }
   
   body {
-    position: relative;
     background-color: white;
-    margin: auto;
+    margin:auto;
   }
 
   h1 {
@@ -221,9 +220,6 @@
     opacity: 1;
   }
 }
-
-
-
 
 /**************Footer **************/
 
